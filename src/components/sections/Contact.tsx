@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
 import Section, { SectionHeader } from '@/components/layout/Section';
 import Input from '@/components/ui/Input';
@@ -21,17 +22,31 @@ export default function Contact() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
+        setSubmitStatus('idle');
 
-        // Simulate form submission
-        setTimeout(() => {
-            console.log('Form data:', formData);
-            setIsSubmitting(false);
+        try {
+            await emailjs.send(
+                import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+                {
+                    from_name: formData.name,
+                    from_email: formData.email,
+                    subject: formData.subject,
+                    message: formData.message,
+                },
+                import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+            );
+
             setSubmitStatus('success');
             setFormData({ name: '', email: '', subject: '', message: '' });
-
+        } catch (error) {
+            console.error('Email sending failed:', error);
+            setSubmitStatus('error');
+        } finally {
+            setIsSubmitting(false);
             // Reset status after 5 seconds
             setTimeout(() => setSubmitStatus('idle'), 5000);
-        }, 2000);
+        }
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
