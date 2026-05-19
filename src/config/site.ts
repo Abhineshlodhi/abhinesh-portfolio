@@ -9,7 +9,7 @@ export const siteConfig: SiteConfig = {
     url: 'https://abhinesh-portfolio.com',
     email: 'abhineshlodhi82@gmail.com',
     phone: '9516289726',
-    location: 'Aundh, Pune, India',
+    location: 'Bengaluru, Karnataka, India',
     availability: 'Open to opportunities',
     social: {
         github: 'https://github.com/abhinesh-lodhi',
