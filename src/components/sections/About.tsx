@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import Section, { SectionHeader } from '@/components/layout/Section';
 import Button from '@/components/ui/Button';
 import { siteConfig } from '@/config/site';
+import { downloadFile } from '@/lib/utils';
 import { Download, Code, Palette, Rocket } from 'lucide-react';
 
 export default function About() {
@@ -118,7 +119,7 @@ export default function About() {
                     <Button
                         variant="primary"
                         size="lg"
-                        onClick={() => window.open(siteConfig.resume, '_blank')}
+                        onClick={() => downloadFile(siteConfig.resume, 'Abhinesh_Lodhi_Resume.pdf')}
                         leftIcon={<Download className="w-5 h-5" />}
                     >
                         Download Resume

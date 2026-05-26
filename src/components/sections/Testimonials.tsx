@@ -127,7 +127,7 @@ export default function Testimonials() {
                         </div>
                     </div>
                     <div>
-                        <div className="text-4xl font-bold gradient-text mb-2">50+</div>
+                        <div className="text-4xl font-bold gradient-text mb-2">1+</div>
                         <div className="text-sm text-gray-600 dark:text-gray-400">Happy Clients</div>
                     </div>
                     <div>

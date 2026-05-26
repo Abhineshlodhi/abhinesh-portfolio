@@ -12,7 +12,7 @@ export const siteConfig: SiteConfig = {
     location: 'Bengaluru, Karnataka, India',
     availability: 'Open to opportunities',
     social: {
-        github: 'https://github.com/abhinesh-lodhi',
+        github: 'https://github.com/Abhineshlodhi',
         linkedin: 'https://www.linkedin.com/in/abhinesh-lodhi-22949b250/',
         twitter: '',
         dribbble: '',

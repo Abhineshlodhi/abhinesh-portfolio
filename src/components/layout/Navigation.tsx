@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { cn } from '@/lib/utils';
+import { cn, downloadFile } from '@/lib/utils';
 import { useTheme } from '@/hooks/useTheme';
 import { siteConfig, navigation } from '@/config/site';
 import Button from '@/components/ui/Button';
@@ -113,7 +113,7 @@ export default function Navigation() {
                         <Button
                             variant="primary"
                             size="sm"
-                            onClick={() => window.open(siteConfig.resume, '_blank')}
+                            onClick={() => downloadFile(siteConfig.resume, 'Abhinesh_Lodhi_Resume.pdf')}
                             className="hidden md:inline-flex"
                             leftIcon={<Download className="w-4 h-4" />}
                         >
@@ -162,7 +162,7 @@ export default function Navigation() {
                                 <Button
                                     variant="primary"
                                     size="md"
-                                    onClick={() => window.open(siteConfig.resume, '_blank')}
+                                    onClick={() => downloadFile(siteConfig.resume, 'Abhinesh_Lodhi_Resume.pdf')}
                                     className="w-full"
                                     leftIcon={<Download className="w-4 h-4" />}
                                 >

@@ -40,6 +40,19 @@ export function throttle<T extends (...args: unknown[]) => unknown>(
 }
 
 /**
+ * Download a file
+ */
+export function downloadFile(filePath: string, fileName: string = 'download'): void {
+    const link = document.createElement('a');
+    link.href = filePath;
+    link.download = fileName;
+    link.style.display = 'none';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+
+/**
  * Format date
  */
 export function formatDate(date: Date | string): string {

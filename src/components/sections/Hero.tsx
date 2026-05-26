@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import Button from '@/components/ui/Button';
 import { siteConfig } from '@/config/site';
+import { downloadFile } from '@/lib/utils';
 import { ChevronDown, Download, Eye } from 'lucide-react';
 
 export default function Hero() {
@@ -153,7 +154,7 @@ export default function Hero() {
                         <Button
                             variant="outline"
                             size="lg"
-                            onClick={() => window.open(siteConfig.resume, '_blank')}
+                            onClick={() => downloadFile(siteConfig.resume, 'Abhinesh_Lodhi_Resume.pdf')}
                             leftIcon={<Download className="w-5 h-5" />}
                             className="min-w-[200px]"
                         >
